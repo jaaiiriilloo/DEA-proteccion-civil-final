@@ -102,10 +102,12 @@ export default {
   */
   axios: {
     proxy: true, // Can be also an object with default options 
-    //baseURL: 'https://datosabiertos.malaga.eu/recursos/urbanismoEInfraestructura/equipamientos/da_desfibriladores-4326.geojson',
+    
     
   },
   proxy: {
+   // '/api': 'https://datosabiertos.malaga.eu/recursos/urbanismoEInfraestructura/equipamientos/da_desfibriladores-4326.geojson',
+    // 
   //  '/api/': { target: 'https://api.example.com/', pathRewrite: {'^/api/': ''}, changeOrigin: true }
       },  
   

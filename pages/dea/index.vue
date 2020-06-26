@@ -218,7 +218,7 @@ export default {
   },
   created: function(){
    
-      axios.get('https://datosabiertos.malaga.eu/recursos/urbanismoEInfraestructura/equipamientos/da_desfibriladores-4326.geojson')
+      axios.get('https://cors-anywhere.herokuapp.com/http://server-deas.herokuapp.com/api/deas')
   .then((response) => {
     // handle success
     let DEAs = response.data.features;
