@@ -103,7 +103,7 @@
           <div class="col-md-12">
             <h1>Geolocalización&#8203; Desfibriladores</h1>
             <i class="fa fa-map-marker"></i>
-            <button @click="locatorButtonPressed">Get my location</button>
+            <button @click="locatorButtonPressed">DEA más cercano a tu ubicación</button>
 
             <div class="result"></div>
             <span>PULSAR EL BOTÓN DE ARRIBA PARA PERMITIR TU UBICACIÓN</span>
@@ -214,7 +214,9 @@ export default {
         { position: { lat: 36.7162109, lng: -4.2793767 } },
         
         
-      ]
+      ],
+      DEAs: []
+
     };
   },
   created: function(){
@@ -222,7 +224,7 @@ export default {
       axios.get('https://cors-anywhere.herokuapp.com/http://server-deas.herokuapp.com/api/deas')
   .then((response) => {
     // handle success
-    let DEAs = response.data.features;
+     this.DEAs = response.data.features;
 
     //horarios DEA
         let alldayDEA = [];
@@ -237,7 +239,7 @@ export default {
         let emtDEA = [];
 
    // this.markers = []
-    DEAs.map((dea)=>{
+    this.DEAs.map((dea)=>{
      // console.log(dea.geometry.coordinates)
     // console.log(dea.properties.horarios)
     //console.log(alldayDEA)
@@ -300,18 +302,42 @@ if(dea.properties.horarios && dea.properties.horarios.includes('24 h'|'24 horas'
   },
   
   methods: {
-    locatorButtonPressed() {
+      locatorButtonPressed() {
+      let distances = [];
       navigator.geolocation.getCurrentPosition(
         position => {
           this.center.lat = position.coords.latitude;
           this.center.lng = position.coords.longitude;
+
+         
+
+          this.DEAs.map((dea)=>{
+            distances.push({
+              distance: getDistance({ latitude: this.center.lat, longitude: this.center.lng },{ latitude: dea.geometry.coordinates[0], longitude: dea.geometry.coordinates[1]}),
+              direction: dea.properties.direccion ? dea.properties.direccion : dea.properties.descripcion,
+              latitude: dea.geometry.coordinates[1],
+              longitude: dea.geometry.coordinates[0]
+            })
+          })
+        distances.sort((a, b) => a.distance - b.distance);
+
+        console.log(distances[0])
+
+        
+        this.center = { lat: distances[0].latitude, lng: distances[0].longitude }
+        this.markers=[{
+          position: { lat: distances[0].latitude, lng: distances[0].longitude }
+
+        }]
+        
         },
 
         error => {
           console.log(error.message);
         }
       );
-    },
+      },
+    
 
     setPlace(place) {
       this.place = place;
