@@ -20,7 +20,7 @@
     <div class="texto">
       <img src="~/assets/img/AVISO-LEGAL.png" class="img-fluid" alt="Responsive image">
       <strong><h1>Aviso legal</h1> </strong> <hr>
-      
+      <video width="320" height="240" controls>   <source src="http://ficheros.proteccioncivil.es/Web/videos/ENPCSistema.mp4" type="video/mp4"> </video>
       <h2 class="subtitlo">
         : :
       </h2>
