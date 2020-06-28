@@ -59,7 +59,7 @@ html {
   height: 100%;
   color: #6a6a6a;
 font-family: 'Suez One', serif;
-  background: #ebf5fc;
+  background: #fff;
   box-shadow: -2px -2px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1);
   margin: 0;
 }

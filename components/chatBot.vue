@@ -1,8 +1,11 @@
 <template>
   
 <div>
+       <input type="button" onclick="history.back()" name="volver atrás" value="volver atrás">
+
 <div id='bodybox'>
 <center></center>
+
   <div id='chatborder'>
     <p id="chatlog7" class="chatlog">&nbsp;</p>
     <p id="chatlog6" class="chatlog">&nbsp;</p>
@@ -13,16 +16,7 @@
     <p id="chatlog1" class="chatlog">&nbsp;</p>
     <input type="text" name="chat" id="chatbox" placeholder="Hi there! I am here to help you out with questions regarding to The Heritage Academy." onfocus="placeHolder()">
   </div>
-  <br>
-  <br>
-  <h2>Academy Assistant</h2>
-  <p>Built By.</p>
-  <ul style="list-style-type:disc">
-    <li>Coding : Suvoparno Banerjee</li>
-    <li>UI/UX Design : Garima Sancheti & Shounak Dawn</li>
-    <li>Testing : Vatsal Agarwal</li>
-  </ul>
-  <br>
+  
 </div>
 
   </div>
@@ -30,8 +24,24 @@
 </template>
 
 <script>
-export default {
+import Swal from 'sweetalert2'
 
+export default {
+ data(){
+ swal({
+  title: "Sweet!",
+  text: "Here's a custom image.",
+  imageUrl: 'thumbs-up.jpg'
+});
+
+},
+created(){
+  swal({
+  title: "Sweet!",
+  text: "Here's a custom image.",
+  imageUrl: 'thumbs-up.jpg'
+});
+}
 }
 </script>
 
@@ -98,4 +108,5 @@ pre {
   background-color: #f0f0f0;
   margin-left: 20px;
 }
+
 </style>

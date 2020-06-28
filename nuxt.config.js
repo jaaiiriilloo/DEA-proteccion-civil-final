@@ -49,7 +49,6 @@ export default {
         rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Suez+One&display=swap",
         rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto&display=swap',
         rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Sriracha',
-        
       }
     ]
   },
@@ -61,7 +60,8 @@ export default {
   ** Global CSS
   */
   css: [
-    "~/node_modules/bootstrap/dist/css/bootstrap.css"
+    "~/node_modules/bootstrap/dist/css/bootstrap.css",
+    
   ],
   /*
   ** Plugins to load before mounting the App
@@ -70,9 +70,9 @@ export default {
     { src: '~/plugins/js/jquery.min.js', ssr: false},
       {src: '~/plugins/js/main.js', ssr: false},
       {src: '~/plugins/js/applee.js', ssr: false},
-      {src: '~/plugins/js/paypalcoffe', ssr: false},
       {src: '~/plugins/js/chatbot', ssr: false},
       {src: '~/plugins/js/carr.js', ssr: false},
+      
       { src: '@/plugins/youtube-embed.js', ssr: false },              
       { src: "~/plugins/google-maps", ssr: true },
 
@@ -83,6 +83,7 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    
   ],
   /*
   ** Nuxt.js modules
@@ -93,6 +94,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    'nuxt-sweetalert2',
     '@nuxtjs/dotenv',
     '@nuxtjs/proxy'
   ],

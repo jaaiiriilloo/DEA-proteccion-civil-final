@@ -3,7 +3,7 @@
     <div>
       <h1>¿SOLICITA AYUDA?</h1>
       <h2 class="subtitlo">
-        : :
+        <input type="button" onclick="history.back()" name="volver atrás" value="volver atrás">
       </h2>
       <h3>- Si <strong>RESPIRA CON NORMALIDAD.</strong><br>
         coloca la víctima de posición lateral de seguridad (PLS), para mantener la via aérea abierta.<br><br>
@@ -62,5 +62,95 @@ data(){
 }
 .links {
   padding-top: 15px;
+}
+h1{
+  font-family: 'Roboto', sans-serif;
+  font-weight: bolder;
+  color: #fff;
+  font-size: 45px;
+}
+h2{
+  display: inline-block;
+  color: #f3c52a;
+  width: 20%;
+  outline: none;
+  transform: scale(0.95);
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, .1), -4px -4px 10px rgba(255, 255, 255, 1), 4px 4px 10px 0 rgba(0, 0, 0, .1) inset, -4px -4px 10px rgba(255, 255, 255, 1) inset;
+  animation: all 350ms;
+  animation-iteration-count: infinite;
+  animation-name: warn-2;
+  
+}
+@keyframes warn-2 {
+	0%,
+	36% {
+		background: linear-gradient(230deg,
+    rgba(235, 140, 17, 0.24) 0%,
+    rgba(239, 170, 26) 25%,
+    rgba(252, 145, 5, 0.18) 49%,
+    rgba(252, 137, 6, 0) 78%,
+    rgba(232, 83, 43) 100%
+  );
+    box-shadow: 0px 0px 3px #222;
+
+	}
+	37%,
+	97% {
+		background: #fff7d4;
+		box-shadow: 0px 0px 8px 4px #e8532b;
+	}
+	99%,
+	100% {
+		background: linear-gradient(155deg,
+    rgba(255, 255, 255, 0.24) 0%,
+    rgba(255, 255, 255, 0.14) 25%,
+    rgba(255, 255, 255, 0.18) 49%,
+    rgba(0, 0, 0, 0) 78%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+		box-shadow: 0px 0px 3px #222;
+	}
+}
+
+h2 input{
+  color: #29235c;
+  animation: all 350ms;
+  animation-iteration-count: infinite;
+  animation-name: warn-2;
+}
+@keyframes warn-2 {
+	0%,
+	36% {
+		background: linear-gradient(230deg,
+    rgba(235, 140, 17, 0.24) 0%,
+    rgba(239, 170, 26) 25%,
+    rgba(252, 145, 5, 0.18) 49%,
+    rgba(252, 137, 6, 0) 78%,
+    rgba(232, 83, 43) 100%
+  );
+    box-shadow: 0px 0px 3px #222;
+
+	}
+	37%,
+	97% {
+		background: #fff7d4;
+		box-shadow: 0px 0px 8px 4px #e8532b;
+	}
+	99%,
+	100% {
+		background: linear-gradient(155deg,
+    rgba(255, 255, 255, 0.24) 0%,
+    rgba(255, 255, 255, 0.14) 25%,
+    rgba(255, 255, 255, 0.18) 49%,
+    rgba(0, 0, 0, 0) 78%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+		box-shadow: 0px 0px 3px rgb(250, 7, 7);
+	}
+}
+h3{
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  color: #fff;
 }
 </style>

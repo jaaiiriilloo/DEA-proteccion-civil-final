@@ -3,7 +3,7 @@
   <div class="wrap">
   <div class="feature">
     <h1>Lo siento, esa solicitud <br>No existe…</h1>
-    <nuxt-link to="/"><button type="button" onClick="anotherTwentyMinutes();">Te Puedo Llevar Al Inicio,<br>El Coste Es Un Café ☕😋</button></nuxt-link>
+    <nuxt-link to="/"><button type="button" onClick="anotherTwentyMinutes();">Te Puedo Llevar Al Inicio,<br>Su Coste Es Un Café ☕😋</button></nuxt-link>
   </div>
 
   <!-- 

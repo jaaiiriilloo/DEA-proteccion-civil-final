@@ -1,0 +1,379 @@
+/**
+ * Variables
+ */
+
+ $sm-viewport: 30em;
+ $md-viewport: 48em;
+ $lg-viewport: 64em;
+ 
+ $ratio: 1.5;
+ 
+ $line-height: $ratio;
+ $line-height-compact: 1.1;
+ $font-family: "Source Sans Pro", sans-serif;
+ $font-family-mono: "Source Code Pro", monospace;
+ 
+ $font-size-xs: (1em / $ratio);
+ $font-size-sm: 1em;
+ $font-size-md: ($font-size-sm * $ratio);
+ $font-size-lg: ($font-size-md * $ratio);
+ 
+ $space: 1rem;
+ $space-medium: ($space * $ratio);
+ $radius: 0.375rem;
+ $edge: 3px;
+ 
+ $black: #000;
+ $white: #fff;
+ 
+ $gray-darker: #222;
+ $gray-dark: #444;
+ $gray: #888;
+ $gray-light: #aaa;
+ $gray-lighter: darken(#e6e6e6, 2%);
+ 
+ $blue: #08c;
+ $blue-light: lighten($blue, 33%);
+ 
+ /**
+  * Scaffolding
+  */
+ 
+ * {
+   margin: 0;
+ }
+ 
+ * + * {
+   margin-top: $space;
+ }
+ 
+ html {
+   background: $gray-dark;
+   box-sizing: border-box;
+ }
+ 
+ *,
+ *:before,
+ *:after {
+   box-sizing: inherit;
+ }
+ 
+ body {
+   color: $gray-lighter;
+   font: 1em/#{$line-height} $font-family;
+   margin: 0 auto $space;
+   max-width: $lg-viewport;
+ }
+ 
+ h1,
+ a {
+   color: $white;
+   font-weight: 600;
+ }
+ 
+ h1 {
+   font-size: $font-size-lg;
+   line-height: $line-height-compact;
+   text-rendering: optimizeLegibility;
+ }
+ 
+ label {
+   display: block;
+ }
+ 
+ pre,
+ code {
+   font-family: $font-family-mono;
+ }
+ 
+ /**
+  * Component: Grid
+  *
+  * https://github.com/suitcss/components-grid/
+  */
+ 
+ .Grid {
+   display: block;
+   font-size: 0;
+   margin: 0;
+   padding: 0;
+   text-align: left; 
+ }
+ 
+ .Grid--withGutter {
+   margin: 0 (-0.5 * $space);
+ }
+ 
+ .Grid--withGutter > .Grid-cell {
+   padding: 0 (0.5 * $space);
+ }
+ 
+ .Grid-cell {
+   box-sizing: border-box;
+   display: inline-block;
+   font-size: 1rem;
+   margin: 0;
+   padding: 0;
+   text-align: left;
+   vertical-align: top;
+   width: 100%;
+ }
+ 
+ /**
+  * Component: Card
+  */
+ 
+ .Card-image {
+   display: inline-block;
+   position: relative;
+ }
+ 
+ .Card-image:after {
+   box-shadow: inset 0 0 0 1px rgba($black, 0.2);
+   content: "";
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+ }
+ 
+ .Card-image img {
+   display: block;
+   height: 3.125em;
+   width: 5em;
+ }
+ 
+ .Card-expiry {
+   color: $gray-light;
+   font-size: $font-size-xs;
+ }
+ 
+ /**
+  * Component: Input
+  */
+ 
+ .Input {
+   background: $white;
+   border: $edge solid $gray-lighter;
+   border-radius: $radius;
+   color: $gray-dark;
+   display: block;
+   font: inherit;
+   padding: ($space / 2) $space;
+   width: 100%;
+   -webkit-appearance: none;
+   
+   &:hover {
+     border-color: $gray-light;
+   }
+   
+   &:focus {
+     border-color: $blue;
+     outline: 0;
+   }
+   
+   &.is-visa,
+   &.is-mastercard,
+   &.is-amex {
+     background-position: ($space * 0.75) center;
+     background-repeat: no-repeat;
+     padding-left: (30 / 16 * 1rem + $space * 1.5);
+   }
+   
+   &.is-visa {
+     background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/62127/creditcard-visa.svg");
+   }
+   
+   &.is-mastercard {
+     background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/62127/creditcard-mastercard.svg");
+   }
+   
+   &.is-amex {
+     background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/62127/creditcard-amex.svg");
+   }
+ }
+ 
+ /**
+  * Component: Button
+  */
+ 
+ .Button {
+   background: $white;
+   border: $edge solid transparent;
+   border-radius: $radius;
+   color: $blue;
+   cursor: pointer;
+   display: inline-block;
+   font: inherit;
+   font-weight: 600;
+   line-height: normal;
+   margin: 0;
+   padding: ($space / 2) $space;
+   
+   &:focus,
+   &:hover {
+     color: lighten($blue, 10%);
+   }
+ }
+ 
+ .Button--primary {
+   background: $blue;
+   color: $white !important;
+ 
+   &:focus,
+   &:hover {
+     background: lighten($blue, 10%);
+   }
+ }
+ 
+ /**
+  * Component: Tiles
+  */
+ 
+ .Tiles {
+   font-size: 0;
+   margin-left: ($space / 2);
+   margin-right: ($space / 2);
+ }
+ 
+ .Tile {
+   display: inline-block;
+   font-size: 1rem;
+   margin: 0;
+   vertical-align: top;
+   width: 100%;
+ }
+ 
+ .Tile-content {
+   background: $white;
+   border-radius: $radius;
+   color: $gray-dark;
+   margin: $space ($space / 2) 0;
+   min-height: 10em;
+   padding: $space;
+   position: relative;
+ }
+ 
+ .Tile-content--toggle {
+   cursor: pointer;
+   
+   &:focus,
+   &:hover {
+     box-shadow: 0 0 0 $edge $blue-light;
+     outline: 0;
+   }
+ }
+ 
+ .Tile.is-disabled .Tile-content--toggle {
+   cursor: default;
+   opacity: 0.5;
+   
+   &:focus,
+   &:hover {
+     box-shadow: none;
+   }
+ }
+ 
+ .Tile-flyout {
+   display: none;
+   position: relative;
+ }
+ 
+ .Tile.is-expanded .Tile-flyout {
+   display: block;
+ }
+ 
+ .Tile-flyout:before {
+   background: #fff;
+   content: "";
+   left: 50%;
+   margin-left: ($space / -2);
+   position: absolute;
+   height: $space;
+   top: ($space / -2);
+   transform: rotate(45deg);
+   width: $space;
+ }
+ 
+ /**
+  * Breakpoint layout changes
+  */
+ 
+ @mixin generate-tile-grid($columns) {
+   .Tile {
+     width: (100% / $columns);
+   }
+   
+   .Tile-flyout {
+     width: (100% * $columns);
+   }
+   
+   @for $column from 1 through $columns {
+     .Tile:nth-child(#{$columns}n+#{$column}) {
+       .Tile-flyout {
+         margin-left: (-100% * ($column - 1));
+       }
+       
+       .Tile-flyout:before {
+         left: (100% / $columns * ($column - 0.5));
+       }
+     }
+   }
+ }
+ 
+ @media (min-width: $sm-viewport) {
+   @include generate-tile-grid(2);
+ }
+ 
+ @media (min-width: $md-viewport) {
+   @include generate-tile-grid(3);
+ }
+ 
+ @media (min-width: $lg-viewport) {
+   @include generate-tile-grid(4);
+ }
+ 
+ /**
+  * Utilities: Space
+  */
+ 
+ .u-marginTop {
+   margin-top: $space;
+ }
+ 
+ @media (min-width: $md-viewport) {
+   .u-md-no-marginTop {
+     margin-top: 0;
+   }
+ }
+ 
+ /**
+  * Utilities: Size
+  *
+  * https://github.com/suitcss/utils-size/
+  */
+ 
+ .u-size1of2 {
+   width: 50% !important;
+ }
+ 
+ @media (min-width: $md-viewport) {
+   .u-md-size1of2 {
+     width: 50% !important;
+   }
+ }
+ 
+ /**
+  * Utilities: Text
+  * 
+  * https://github.com/suitcss/utils-text/
+  */
+ 
+ .u-textCenter {
+   text-align: center !important;
+ }
+ 
+ .u-textRight {
+   text-align: right !important;
+ }

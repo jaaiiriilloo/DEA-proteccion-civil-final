@@ -23,10 +23,12 @@
     "jquery": "^3.5.1",
     "nodemon": "^2.0.4",
     "nuxt": "^2.0.0",
+    "nuxt-sweetalert2": "^1.0.0",
     "popper.js": "^1.16.1",
+    "sweetalert2": "^9.15.2",
+    "vue-sweetalert2": "^3.0.5",
     "vue-youtube-embed": "^2.2.2",
-    "vue2-google-maps": "^0.10.7",
-    "vuetify": "^2.3.0"
+    "vue2-google-maps": "^0.10.7"
   },
   "devDependencies": {
     "@nuxtjs/dotenv": "^1.4.1"

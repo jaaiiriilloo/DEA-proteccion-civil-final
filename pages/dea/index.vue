@@ -28,6 +28,9 @@
                   </nuxt-link>
                 </li>
                 <li>
+								<nuxt-link to="/rcp"><i class="far fa-2x fa-question-circle" style="color:#2b598f;"></i>-RCP + INFORMACIÓN</nuxt-link>
+							</li>
+                <li>
                   <nuxt-link to="/llamada112">
                     <i class="fas fa-2x fa-mobile-alt" style="color: #2b598f;"></i>-LLAMADA 112
                   </nuxt-link>
@@ -48,24 +51,22 @@
                 data-toggle="collapse"
                 aria-expanded="false"
                 class="dropdown-toggle"
-              >INFORMACIÓN P.CIVIL</a>
+              >INFORMACIÓN P. CIVIL</a>
               <ul class="collapse list-unstyled" id="pageSubmenu">
                 <li>
-                  <a href="#">¿QUÉ HACEMOS?</a>
+                  <nuxt-link to="/dea/queHacemos/_quehacemos">¿QUÉ HACEMOS?</nuxt-link>
                 </li>
                 <li>
-                  <a href="#">¿QUIÉNES SOMOS?</a>
+                  <nuxt-link to="/dea/QuienesSomos/_quienesSomos">¿QUIÉNES SOMOS?</nuxt-link>
                 </li>
-                <li>
-                  <a href="#">FUNCIONES</a>
-                </li>
+                
               </ul>
             </li>
            <li>
-						<nuxt-link to="#">Págame un café ☕</nuxt-link>
+						<nuxt-link to="/coffe/_coffePay">Págame un café ☕</nuxt-link>
 					</li>
             <li>
-              <a href="#">Aviso Legal</a>
+              <nuxt-link to="/dea/avisoLegal/_avisoLegal">Aviso Legal</nuxt-link>
             </li>
           </ul>
           <div class="image-fluid">
@@ -200,7 +201,7 @@ export default {
     }
   ],
   components: {
-   // Rcp,
+    
   },
   data() {
     return {
@@ -248,7 +249,34 @@ if(dea.properties.horarios && dea.properties.horarios.includes('24 h'|'24 horas'
          fivedayDEA.push(dea)
         //console.log(fivedayDEA)
         
+        if(dea.properties.horarios && dea.properties.horarios.includes('""')) {
+             nulldayDEA.push(dea);
+         }
+         if(dea.properties.horarios && dea.properties.horarios.includes('L-M-X-J-V-S')) {
+             sixdayDEA.push(dea);
+         }
+                    //------ TITULARIDAD DEAS
+
+       if(dea.properties.titularidad === 'UMA') {
+            umaDEA.push(dea);
+        //    console.log(umaDEA)
+         }
+         if(dea.properties.titularidad === 'EMT') {
+            emtDEA.push(dea);
         
+         }
+         if(dea.properties.titularidad === 'MUNICIPAL') {
+            municipalDEA.push(dea);
+        
+         }
+         if(dea.properties.titularidad === 'PRIVADA') {
+            privateDEA.push(dea);
+        
+         }
+         if(dea.properties.titularidad === 'OTRAS') {
+            otherDEA.push(dea);
+        
+         }
         
         
         // PRINT ALLDEA API
@@ -269,14 +297,7 @@ if(dea.properties.horarios && dea.properties.horarios.includes('24 h'|'24 horas'
   .then(function () {
     // always executed
   });
-      
-      
-    /*this.markers.push({
-      position: {lat: 36.75, lng:-4.10}
-    }) */
   },
-  
-    
   
   methods: {
     locatorButtonPressed() {
@@ -298,6 +319,7 @@ if(dea.properties.horarios && dea.properties.horarios.includes('24 h'|'24 horas'
     setDescription(description) {
       this.description = description;
     },
+    // CENTER PLACE
     usePlace(place) {
       if (this.place) {
         var newPostion = {
@@ -309,7 +331,7 @@ if(dea.properties.horarios && dea.properties.horarios.includes('24 h'|'24 horas'
         this.place = null;
       }
     },
-
+      // NEW UPDATE MAKERS
     updateMaker: function(event) {
       let geocoder = new google.maps.Geocoder();
       geocoder.geocode({ latLng: event.latLng }, (result, status) => {

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="app">
 <div id="phone-wrapper">
 		<div id="app">
       
@@ -82,7 +82,7 @@ export default {
 <style scoped>
 
 html {
-	font-family: Arial, sans-serif;
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	font-size: 16px;
 }
 

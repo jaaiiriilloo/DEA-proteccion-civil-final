@@ -7,8 +7,11 @@ var messages = [],
   marks = 0,
   flag = 0,
   talking = true; 
+  /**********************/
+	/*** AUTO REPLY BOT ***/
+	/**********************/
 function chatbotResponse() {
-  
+  // Generate some different replies
   talking = true;
   botMessage = "Lo siento no puedo entenderte, ¿puedes usar otras palabras? Gracias"; 
 
@@ -29,11 +32,11 @@ if (n !== -1) {
 } 
 var n = lastUserMessage.search(/\b(fuego|humo|explosión|explosion|quemado|umo|gas|fuga|atrapado|encerrado)\b/i);
 if (n !== -1) {
-  botMessage = 'De acuerdo, vamos a proceder a la llamada al Cuerpo provincial de Bomberos, si estás de acuerdo "escribe la palabra telefono y a continuacion escribe bombero"';
+  botMessage = 'De acuerdo, vamos a proceder a la llamada al Cuerpo provincial de Bomberos, si estás de acuerdo "escribe la palabra telefono y en la siguiente pantalla a continuacion escribe bombero"';
 }   
-var n = lastUserMessage.search(/\b(trifulca|paliza|pelea|violencia|robo|peligro|atentado|navaja)\b/i);
+var n = lastUserMessage.search(/\b(trifulca|paliza|pelea|violencia|robo|peligro|atentado|apuñalar|puñadala|arma blanca|atentado|navaja)\b/i);
 if (n !== -1) {
-  botMessage = 'De acuerdo, vamos a proceder a la llamada a Policia Nacional, si estas de acuerdo, telefono y a continuación "Policia-nacional"';
+  botMessage = 'De acuerdo, vamos a proceder a la llamada a Policia Nacional, si estas de acuerdo, escribe la palabra telefono y a continuación en la siguiente pantalla escribe "Policia-nacional"';
 }  
  
 if (lastUserMessage === 'nombre') {
@@ -108,7 +111,7 @@ function Speech(say) {
     speechSynthesis.speak(utterance);
   }
 }
-
+//CHAR CODE
 document.onkeypress = keyPress;
 function keyPress(e) {
   var x = e || window.event;

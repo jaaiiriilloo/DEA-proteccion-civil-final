@@ -2,10 +2,6 @@
 <div class="app">
 
 	<title>RCP + INFORMACIÓN</title>
-
-
-
-
 	<div class="wrapper d-flex align-items-stretch">
 		<nav id="sidebar">
 			<div class="custom-menu">
@@ -21,38 +17,40 @@
 						<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">BOTONES INICIO</a>
 						<ul class="collapse list-unstyled" id="homeSubmenu">
 							<li>
-								<a href="#"><i class="fas fa-2x fa-heartbeat" style="color: #a01d23;"></i>-LOCALIZAR DESFIBRILADOR</a>
+								<nuxt-link to="/dea"><i class="fas fa-2x fa-heartbeat" style="color: #a01d23;"></i>-LOCALIZAR DESFIBRILADOR</nuxt-link>
+							</li>
+              <li>
+								<nuxt-link to="/rcp"><i class="far fa-2x fa-question-circle" style="color:#2b598f;"></i>-RCP + INFORMACIÓN</nuxt-link>
 							</li>
 							<li>
-								<a href="#"><i class="fas fa-2x fa-mobile-alt" style="color: #2b598f;"></i>-LLAMADA 112</a>
+								<nuxt-link to="/llamada112"><i class="fas fa-2x fa-mobile-alt" style="color: #2b598f;"></i>-LLAMADA 112</nuxt-link>
 							</li>
 							<li>
-								<a href="#"><i class="fas fa-2x fa-fire-extinguisher" style="color: #a01d23;"></i>-CUERPOS DE SEGURIDAD</a>
+								<nuxt-link to="/llamadaSos"><i class="fas fa-2x fa-fire-extinguisher" style="color: #a01d23;"></i>-CUERPOS DE SEGURIDAD</nuxt-link>
 							</li>
 						</ul>
 					</li>
 					<li>
-						<a href="#">VOLVER A LA PRINCIPAL</a>
+						<nuxt-link to="/">VOLVER A LA PRINCIPAL</nuxt-link>
 					</li>
 					<li>
 						<a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">INFORMACIÓN P.CIVIL</a>
 						<ul class="collapse list-unstyled" id="pageSubmenu">
 							<li>
-								<a href="#">¿QUÉ HACEMOS?</a>
+								<nuxt-link to="/dea/queHacemos/_quehacemos">¿QUÉ HACEMOS?</nuxt-link>
 							</li>
 							<li>
-								<a href="#">¿QUIÉNES SOMOS?</a>
+								<nuxt-link to="/dea/QuienesSomos/_quienesSomos">¿QUIÉNES SOMOS?</nuxt-link>
 							</li>
-							<li>
-								<a href="#">FUNCIONES</a>
-							</li>
+							
 						</ul>
 					</li>
 					<li>
-						<nuxt-link to="/rcp/coffebtn/_payCoffe.vue">Págame un café ☕</nuxt-link>
+						<nuxt-link to="coffe/index">Págame un café ☕</nuxt-link>
+            
 					</li>
 					<li>
-						<a href="#">Aviso Legal</a>
+						<nuxt-link to="/dea/avisolegal/_avisoLegal">Aviso Legal</nuxt-link>
 					</li>
 				</ul>
 				<div class="image-fluid">
@@ -227,7 +225,7 @@
 					</p>
 				</article>
 				<article id="blog">
-					<a href="">Ir a todos los vídeos</a>
+			<nuxt-link to="/"> Ir al menú principal </nuxt-link>
 				</article>
 
 			</section>
@@ -255,7 +253,6 @@
 </template>
 
 <script>
-
 
 
 export default {
@@ -708,6 +705,7 @@ a[data-toggle="collapse"] {
   width: 100%;
   height: 75px;
   line-height: 75px;
+  color: #e8532b;
   text-align: center;
   font-family: "BebasNeue";
   font-size: 35px;
