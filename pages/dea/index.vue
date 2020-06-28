@@ -162,6 +162,8 @@
                 :key="index"
                 :position="item.position"
                 @click="center = item.position"
+                icon= "https://raw.githubusercontent.com/Concept211/Google-Maps-Markers/master/images/marker_orange@.png"
+    
               ></gmap-marker>
             </gmap-map>
             <iframe width="1000" height="400" src="https://datosabiertos.malaga.eu/dataset/desfibriladores/resource/64d2dd10-3992-4423-9277-2ef92f31c680/view/401813cc-d488-4e1a-87cf-4daabdfd9571" frameBorder="0"></iframe>
@@ -215,9 +217,11 @@ export default {
         
         
       ],
+      
       DEAs: []
 
     };
+    
   },
   created: function(){
    
