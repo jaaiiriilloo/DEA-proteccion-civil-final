@@ -34,7 +34,7 @@ var n = lastUserMessage.search(/\b(fuego|humo|explosión|explosion|quemado|umo|g
 if (n !== -1) {
   botMessage = 'De acuerdo, vamos a proceder a la llamada al Cuerpo provincial de Bomberos, si estás de acuerdo "escribe la palabra telefono y en la siguiente pantalla a continuacion escribe bombero"';
 }   
-var n = lastUserMessage.search(/\b(trifulca|paliza|pelea|violencia|robo|peligro|atentado|apuñalar|puñadala|arma blanca|atentado|navaja)\b/i);
+var n = lastUserMessage.search(/\b(trifulca|paliza|pelea|violencia|robo|peligro|atentado|apuñalar|puñalada|puñaladas|apuñalado|arma blanca|atentado|navaja)\b/i);
 if (n !== -1) {
   botMessage = 'De acuerdo, vamos a proceder a la llamada a Policia Nacional, si estas de acuerdo, escribe la palabra telefono y a continuación en la siguiente pantalla escribe "Policia-nacional"';
 }  
@@ -48,22 +48,22 @@ if (n !== -1) {
 } 
 var n = lastUserMessage.search(/\b(llamada|telefono|movil)\b/i);
 if (n !== -1) {
-  botMessage = "Indica a que Fuerza y Cuerpo de Seguridad  quieres llamar ?";
+  botMessage = "Indica a que Fuerza y Cuerpo de Seguridad  quieres llamar policia-nacional, bombero, guardia-civil, policia-local?";
   flag = 1;
 }
 var n = lastUserMessage.search(/\b(bomberos|bombero|firefighter)\b/i);
   if (n !== -1 && flag === 1 ) {
-      window.open('tel:080');
+      window.open('tel:+34080');
       botMessage = "Llamada a Bomberos en marcha, por favor, mantengase al teléfono y no cambie de pestaña ni apague o cuelgue el dispositivo, Gracias)";
   }
   var n = lastUserMessage.search(/\b(llamada|telefono|movil)\b/i);
 if (n !== -1) {
-  botMessage = "Indica a que Fuerza y Cuerpo de Seguridad  quieres llamar ?";
+  botMessage = "Indica a que Fuerza y Cuerpo de Seguridad  quieres llamar policia-local, bomberos, policia-nacional, guardia-civil?";
   flag = 1;
 }
   var n = lastUserMessage.search(/\b(policialocal|policia-local|local-police)\b/i);
   if (n !== -1 && flag === 1 ) {
-      window.open('tel:092');
+      window.open('tel:+34092');
       botMessage = "Llamada a Policia Local en marcha, por favor, mantengase al teléfono y no cambie de pestaña ni apague o cuelgue el dispositivo, Gracias)";
   }
   var n = lastUserMessage.search(/\b(llamada|telefono|movil)\b/i);
@@ -73,7 +73,7 @@ if (n !== -1) {
 }
 var n = lastUserMessage.search(/\b(policianacional|policia-nacional|nacional-police)\b/i);
   if (n !== -1 && flag === 1 ) {
-      window.open('tel:091');
+      window.open('tel:+34091');
       botMessage = "Llamada a Policia Local en marcha, por favor, mantengase al teléfono y no cambie de pestaña ni apague o cuelgue el dispositivo, Gracias)";
   }
   var n = lastUserMessage.search(/\b(llamada|telefono|movil)\b/i);
@@ -83,7 +83,7 @@ var n = lastUserMessage.search(/\b(policianacional|policia-nacional|nacional-pol
   }
   var n = lastUserMessage.search(/\b(guardia-civil|guardiacivil|guardia civil)\b/i);
   if (n !== -1 && flag === 1 ) {
-      window.open('tel:062');
+      window.open('tel:+34062');
       botMessage = "Llamada a Guardia Civil de Tráfico en marcha, por favor, mantengase al teléfono y no cambie de pestaña ni apague o cuelgue el dispositivo, Gracias)";
   }
 

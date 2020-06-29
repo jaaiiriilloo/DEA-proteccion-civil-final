@@ -84,6 +84,7 @@ body {
   padding-right: 20px;
   padding-left: 15px;
   border-radius: 15px;
+  overflow: scroll;
 }
 
 .chatlog {
@@ -94,6 +95,7 @@ body {
   font: 17px arial, sans-serif;
   height: 22px;
   width: 100%;
+  overflow: scroll;
 }
 
 h1 {

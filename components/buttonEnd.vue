@@ -360,6 +360,7 @@ font-family: 'Suez One', serif;
 .end-footer {
   display: inline;
   background: #ebf5fc;
+  overflow: hidden;
 
 
 }
