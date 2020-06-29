@@ -1,7 +1,7 @@
 <template>
   
 <div>
-       <input type="button" onclick="history.back()" name="volver atrás" value="volver atrás">
+       
 
 <div id='bodybox'>
 <center></center>
@@ -24,15 +24,11 @@
 </template>
 
 <script>
-import Swal from 'sweetalert2'
+
 
 export default {
  data(){
- swal({
-  title: "Sweet!",
-  text: "Here's a custom image.",
-  imageUrl: 'thumbs-up.jpg'
-});
+ 
 
 },
 created(){

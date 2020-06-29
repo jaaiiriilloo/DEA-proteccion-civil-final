@@ -21,12 +21,8 @@
     "cors": "^2.8.5",
     "geolib": "^3.3.1",
     "jquery": "^3.5.1",
-    "nodemon": "^2.0.4",
     "nuxt": "^2.0.0",
-    "nuxt-sweetalert2": "^1.0.0",
     "popper.js": "^1.16.1",
-    "sweetalert2": "^9.15.2",
-    "vue-sweetalert2": "^3.0.5",
     "vue-youtube-embed": "^2.2.2",
     "vue2-google-maps": "^0.10.7"
   },

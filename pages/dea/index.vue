@@ -28,8 +28,10 @@
                   </nuxt-link>
                 </li>
                 <li>
-								<nuxt-link to="/rcp"><i class="far fa-2x fa-question-circle" style="color:#2b598f;"></i>-RCP + INFORMACIÓN</nuxt-link>
-							</li>
+                  <nuxt-link to="/rcp">
+                    <i class="far fa-2x fa-question-circle" style="color:#2b598f;"></i>-RCP + INFORMACIÓN
+                  </nuxt-link>
+                </li>
                 <li>
                   <nuxt-link to="/llamada112">
                     <i class="fas fa-2x fa-mobile-alt" style="color: #2b598f;"></i>-LLAMADA 112
@@ -59,12 +61,11 @@
                 <li>
                   <nuxt-link to="/dea/QuienesSomos/_quienesSomos">¿QUIÉNES SOMOS?</nuxt-link>
                 </li>
-                
               </ul>
             </li>
-           <li>
-						<nuxt-link to="/coffe/_coffePay">Págame un café ☕</nuxt-link>
-					</li>
+            <li>
+              <nuxt-link to="/coffe/_coffePay">Págame un café ☕</nuxt-link>
+            </li>
             <li>
               <nuxt-link to="/dea/avisoLegal/_avisoLegal">Aviso Legal</nuxt-link>
             </li>
@@ -111,7 +112,6 @@
           <div class="map-left">
             <label>
               DEAS Actualmente no disponible fuera de Málaga
- 
               <GmapAutocomplete
                 ref="autocomplete"
                 :position.sync="markers[0].position"
@@ -121,7 +121,6 @@
               <button @click="usePlace">Añadir</button>
             </label>
             <br />
-
 
             <gmap-map
               :options="{
@@ -162,11 +161,15 @@
                 :key="index"
                 :position="item.position"
                 @click="center = item.position"
-                icon= "https://raw.githubusercontent.com/Concept211/Google-Maps-Markers/master/images/marker_orange@.png"
-    
+                icon="https://raw.githubusercontent.com/Concept211/Google-Maps-Markers/master/images/marker_orange@.png"
               ></gmap-marker>
             </gmap-map>
-            <iframe width="1000" height="400" src="https://datosabiertos.malaga.eu/dataset/desfibriladores/resource/64d2dd10-3992-4423-9277-2ef92f31c680/view/401813cc-d488-4e1a-87cf-4daabdfd9571" frameBorder="0"></iframe>
+            <iframe
+              width="1000"
+              height="400"
+              src="https://datosabiertos.malaga.eu/dataset/desfibriladores/resource/64d2dd10-3992-4423-9277-2ef92f31c680/view/401813cc-d488-4e1a-87cf-4daabdfd9571"
+              frameborder="0"
+            ></iframe>
           </div>
         </section>
       </div>
@@ -187,8 +190,7 @@
 <script>
 //import Rcp from "~/components/rcp.vue";
 import axios from "axios";
-import getDistance from 'geolib/es/getDistance';
-
+import getDistance from "geolib/es/getDistance";
 
 export default {
   head: {
@@ -202,9 +204,7 @@ export default {
         "Esta es la sección donde geolocalizar los desfibriladores según tu ubicación"
     }
   ],
-  components: {
-    
-  },
+  components: {},
   data() {
     return {
       address: "",
@@ -213,24 +213,22 @@ export default {
       mapTypeId: "terrain",
       markers: [
         { position: { lat: 36.7413845, lng: -4.0946126 } },
-        { position: { lat: 36.7162109, lng: -4.2793767 } },
-        
-        
+        { position: { lat: 36.7162109, lng: -4.2793767 } }
       ],
-      
+
       DEAs: []
-
     };
-    
   },
-  created: function(){
-   
-      axios.get('https://cors-anywhere.herokuapp.com/http://server-deas.herokuapp.com/api/deas')
-  .then((response) => {
-    // handle success
-     this.DEAs = response.data.features;
+  created: function() {
+    axios
+      .get(
+        "https://cors-anywhere.herokuapp.com/http://server-deas.herokuapp.com/api/deas"
+      )
+      .then(response => {
+        // handle success
+        this.DEAs = response.data.features;
 
-    //horarios DEA
+        //horarios DEA
         let alldayDEA = [];
         let sixdayDEA = [];
         let fivedayDEA = [];
@@ -242,106 +240,123 @@ export default {
         let municipalDEA = [];
         let emtDEA = [];
 
-   // this.markers = []
-    this.DEAs.map((dea)=>{
-     // console.log(dea.geometry.coordinates)
-    // console.log(dea.properties.horarios)
-    //console.log(alldayDEA)
-if(dea.properties.horarios && dea.properties.horarios.includes('24 h'|'24 horas'|'24HORAS'|'24h'|'24 h.')) {
-             alldayDEA.push(dea);
-         }
-        // console.log(dea.properties.horarios.includes('L-M-X-J-V'))
-         if (dea.properties.horarios && dea.properties.horarios.includes('L-M-X-J-V'|'L-V'|'L a V'))
-         fivedayDEA.push(dea)
-        //console.log(fivedayDEA)
-        
-        if(dea.properties.horarios && dea.properties.horarios.includes('""')) {
-             nulldayDEA.push(dea);
-         }
-         if(dea.properties.horarios && dea.properties.horarios.includes('L-M-X-J-V-S')) {
-             sixdayDEA.push(dea);
-         }
-                    //------ TITULARIDAD DEAS
+        // this.markers = []
+        this.DEAs.map(dea => {
+          // console.log(dea.geometry.coordinates)
+          // console.log(dea.properties.horarios)
+          //console.log(alldayDEA)
+          if (
+            dea.properties.horarios &&
+            dea.properties.horarios.includes(
+              "24 h" | "24 horas" | "24HORAS" | "24h" | "24 h."
+            )
+          ) {
+            alldayDEA.push(dea);
+          }
+          // console.log(dea.properties.horarios.includes('L-M-X-J-V'))
+          if (
+            dea.properties.horarios &&
+            dea.properties.horarios.includes("L-M-X-J-V" | "L-V" | "L a V")
+          )
+            fivedayDEA.push(dea);
+          //console.log(fivedayDEA)
 
-       if(dea.properties.titularidad === 'UMA') {
+          if (
+            dea.properties.horarios &&
+            dea.properties.horarios.includes('""')
+          ) {
+            nulldayDEA.push(dea);
+          }
+          if (
+            dea.properties.horarios &&
+            dea.properties.horarios.includes("L-M-X-J-V-S")
+          ) {
+            sixdayDEA.push(dea);
+          }
+          //------ TITULARIDAD DEAS
+
+          if (dea.properties.titularidad === "UMA") {
             umaDEA.push(dea);
-        //    console.log(umaDEA)
-         }
-         if(dea.properties.titularidad === 'EMT') {
+            //    console.log(umaDEA)
+          }
+          if (dea.properties.titularidad === "EMT") {
             emtDEA.push(dea);
-        
-         }
-         if(dea.properties.titularidad === 'MUNICIPAL') {
+          }
+          if (dea.properties.titularidad === "MUNICIPAL") {
             municipalDEA.push(dea);
-        
-         }
-         if(dea.properties.titularidad === 'PRIVADA') {
+          }
+          if (dea.properties.titularidad === "PRIVADA") {
             privateDEA.push(dea);
-        
-         }
-         if(dea.properties.titularidad === 'OTRAS') {
+          }
+          if (dea.properties.titularidad === "OTRAS") {
             otherDEA.push(dea);
-        
-         }
-        
-        
-        // PRINT ALLDEA API
-        this.markers.push({
-          position: 
-          {lng: dea.geometry.coordinates[0], 
-          lat: dea.geometry.coordinates[1]}
-        })
-        
-    });
+          }
 
-
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
-  .then(function () {
-    // always executed
-  });
+          // PRINT ALLDEA API
+          this.markers.push({
+            position: {
+              lng: dea.geometry.coordinates[0],
+              lat: dea.geometry.coordinates[1]
+            }
+          });
+        });
+      })
+      .catch(function(error) {
+        // handle error
+        console.log(error);
+      })
+      .then(function() {
+        // always executed
+      });
   },
-  
+
   methods: {
-      locatorButtonPressed() {
+    locatorButtonPressed() {
       let distances = [];
       navigator.geolocation.getCurrentPosition(
         position => {
           this.center.lat = position.coords.latitude;
           this.center.lng = position.coords.longitude;
 
-         
-
-          this.DEAs.map((dea)=>{
+          this.DEAs.map(dea => {
             distances.push({
-              distance: getDistance({ latitude: this.center.lat, longitude: this.center.lng },{ latitude: dea.geometry.coordinates[0], longitude: dea.geometry.coordinates[1]}),
-              direction: dea.properties.direccion ? dea.properties.direccion : dea.properties.descripcion,
+              distance: getDistance(
+                { latitude: this.center.lat, longitude: this.center.lng },
+                {
+                  latitude: dea.geometry.coordinates[0],
+                  longitude: dea.geometry.coordinates[1]
+                }
+              ),
+              direction: dea.properties.direccion
+                ? dea.properties.direccion
+                : dea.properties.descripcion,
               latitude: dea.geometry.coordinates[1],
               longitude: dea.geometry.coordinates[0]
-            })
-          })
-        distances.sort((a, b) => a.distance - b.distance);
+            });
+          });
+          distances.sort((a, b) => a.distance - b.distance);
 
-        console.log(distances[0])
+          console.log(distances[0]);
 
-        
-        this.center = { lat: distances[0].latitude, lng: distances[0].longitude }
-        this.markers=[{
-          position: { lat: distances[0].latitude, lng: distances[0].longitude }
-
-        }]
-        
+          this.center = {
+            lat: distances[0].latitude,
+            lng: distances[0].longitude
+          };
+          this.markers = [
+            {
+              position: {
+                lat: distances[0].latitude,
+                lng: distances[0].longitude
+              }
+            }
+          ];
         },
 
         error => {
           console.log(error.message);
         }
       );
-      },
-    
+    },
 
     setPlace(place) {
       this.place = place;
@@ -349,7 +364,7 @@ if(dea.properties.horarios && dea.properties.horarios.includes('24 h'|'24 horas'
     setDescription(description) {
       this.description = description;
     },
-    // CENTER PLACE
+    // USE PLACE
     usePlace(place) {
       if (this.place) {
         var newPostion = {
@@ -361,7 +376,7 @@ if(dea.properties.horarios && dea.properties.horarios.includes('24 h'|'24 horas'
         this.place = null;
       }
     },
-      // NEW UPDATE MAKERS
+    // NEW UPDATE MAKERS
     updateMaker: function(event) {
       let geocoder = new google.maps.Geocoder();
       geocoder.geocode({ latLng: event.latLng }, (result, status) => {
@@ -372,84 +387,8 @@ if(dea.properties.horarios && dea.properties.horarios.includes('24 h'|'24 horas'
         }
       });
     }
-  },
- /* created() {
-    axios
-      .get("https://datosabiertos.malaga.eu/recursos/urbanismoEInfraestructura/equipamientos/da_desfibriladores-4326.geojson")
-      .then(function(response) {
-        // handle success
-        
-        let DEAs = response.data.features;
-        //horarios DEA
-        let alldayDEA = [];
-        let sixdayDEA = [];
-        let fivedayDEA = [];
-        let nulldayDea = [];
-        // Titularidad DEA
-        let privateDEA = [];
-        let otherDEA = [];
-        let umaDEA = [];
-        let municipalDEA = [];
-        let emtDEA = [];
-
-        DEAs.map(dea => {
-          // HORARIOS DEA
-              console.log(dea.properties.horarios)
-         if(dea.properties.horarios && dea.properties.horarios.includes('24 h'|'24 horas'|'24HORAS'|'24h'|'24 h.')) {
-             alldayDEA.push(dea);
-         }
-         if (dea.properties.horarios && dea.properties.horarios.includes('L-M-X-J-V'|'L-V'|'L a V'))
-         fivedayDEA.push(dea)
-
-        if(dea.properties.horarios && dea.properties.horarios.includes('""')) {
-             nulldayDEA.push(dea);
-         }
-         if(dea.properties.horarios && dea.properties.horarios.includes('L-M-X-J-V-S')) {
-             sixdayDEA.push(dea);
-         }
-
-        // TITULARIDAD DEAS
-
-       if(dea.properties.titularidad === 'UMA') {
-            umaDEA.push(dea);
-        //    console.log(dea.properties.titularidad)
-         }
-         if(dea.properties.titularidad === 'EMT') {
-            emtDEA.push(dea);
-        
-         }
-         if(dea.properties.titularidad === 'MUNICIPAL') {
-            municipalDEA.push(dea);
-        
-         }
-         if(dea.properties.titularidad === 'PRIVADA') {
-            privateDEA.push(dea);
-        
-         }
-         if(dea.properties.titularidad === 'OTRAS') {
-            otherDEA.push(dea);
-        
-         }
-        
-    });
-
-    // let umaDEA = DEAs.filter(dea => dea.properties.titularidad === 'UMA');
-
-     console.log(umaDEA);
-
-    // console.log(privateDEA.length)
-
-    // console.log(DEAs.length)
-    // console.log(alldayDEA.length)
-      })
-      .catch(function(error) {
-        // handle error
-        console.log(error);
-      })
-      .then(function() {
-        // always executed
-      }); 
-  } */
+  }
+  
 };
 </script>
 
@@ -670,8 +609,8 @@ h6 {
 a[data-toggle="collapse"] {
   position: relative;
 }
-button{
-  background:#e8532b;
+button {
+  background: #e8532b;
   color: #fff;
 }
 
@@ -761,7 +700,6 @@ span {
   color: #777;
 }
 @keyframes bounce {
-  
   0%,
   20%,
   50%,
@@ -805,6 +743,5 @@ span {
 #footer-end p {
   text-align: center;
 }
-
 </style>
 
