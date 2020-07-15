@@ -12,13 +12,13 @@
   Geolocalizar Desfibrilador más cercano a tu ubicación si facilitas los permisos de ubicación.
 
   Poder hacer llamada al 112 sin salir de la aplicación.
-  <code><img height="100" width="300" src="https://cdn.dribbble.com/users/526481/screenshots/10805748/media/9264759636adf550e5dc6edbc9794ca1.gif"></code>
+  <code><img height="100" width="300" src="https://pplware.sapo.pt/wp-content/uploads/2019/08/sos_android_google_2.gif"></code>
 
   Dispone de un plus de autollamadas a distintas Fuerzas y Cuerpos de Seguridad.
-  <code><img height="60" src="https://i.pinimg.com/originals/86/87/19/868719b1db3829d6a68f81c639f4a5f3.png"></code>
-  <code><img height="60"  src="https://asteresa.net/images/stories/PoliciaLocalMalaga.png"></code>
-  <code><img height="60"  src="https://img1.freepng.es/20180714/jhb/kisspng-guardia-civil-civil-guard-national-police-corps-mi-civil-rights-symbol-5b49e878a3a044.7151903515315702966702.jpg"></code>
-  <code><img height="60"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSBn1BM8ngn_e3OfVJEJbcU0KRTpOfasKsrEw&usqp=CAU"></code>
+  <code><img height="40" src="https://i.pinimg.com/originals/86/87/19/868719b1db3829d6a68f81c639f4a5f3.png"></code>
+  <code><img height="40"  src="https://asteresa.net/images/stories/PoliciaLocalMalaga.png"></code>
+  <code><img height="40"  src="https://img1.freepng.es/20180714/jhb/kisspng-guardia-civil-civil-guard-national-police-corps-mi-civil-rights-symbol-5b49e878a3a044.7151903515315702966702.jpg"></code>
+  <code><img height="40"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSBn1BM8ngn_e3OfVJEJbcU0KRTpOfasKsrEw&usqp=CAU"></code>
   Sección de guia paso por paso de como actuar y poder realizar una RCP (Reanimación cardio pulmonar) y de como usar un DESA, DEA (Desfibriladores Semi y Automático).
   <code><img height="250" width="600" src="https://thumbs.gfycat.com/NeighboringEvilLabradorretriever-size_restricted.gif"></code>
 
