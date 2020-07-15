@@ -19,6 +19,8 @@
   <code><img height="40"  src="https://asteresa.net/images/stories/PoliciaLocalMalaga.png"></code>
   <code><img height="40"  src="https://img1.freepng.es/20180714/jhb/kisspng-guardia-civil-civil-guard-national-police-corps-mi-civil-rights-symbol-5b49e878a3a044.7151903515315702966702.jpg"></code>
   <code><img height="40"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSBn1BM8ngn_e3OfVJEJbcU0KRTpOfasKsrEw&usqp=CAU"></code>
+  <br>
+  <br>
   Sección de guia paso por paso de como actuar y poder realizar una RCP (Reanimación cardio pulmonar) y de como usar un DESA, DEA (Desfibriladores Semi y Automático).
   <code><img height="250" width="600" src="https://thumbs.gfycat.com/NeighboringEvilLabradorretriever-size_restricted.gif"></code>
 
