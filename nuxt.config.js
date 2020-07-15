@@ -72,8 +72,8 @@ export default {
       {src: '~/plugins/js/applee.js', ssr: false},
       {src: '~/plugins/js/chatbot', ssr: false},
       {src: '~/plugins/js/carr.js', ssr: false},
-      
-      { src: '@/plugins/youtube-embed.js', ssr: false },              
+      { src: '@/plugins/youtube-embed.js', ssr: false },  
+      { src: '~/plugins/after-each', mode: 'client' },            
       { src: "~/plugins/google-maps", ssr: true },
 
      /* { src: '~/plugins/axios', ssr: true }  */
