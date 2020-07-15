@@ -12,7 +12,7 @@
   Geolocalizar Desfibrilador más cercano a tu ubicación si facilitas los permisos de ubicación.
 
   Poder hacer llamada al 112 sin salir de la aplicación.
-  <code><img height="100" width="300" src="https://pplware.sapo.pt/wp-content/uploads/2019/08/sos_android_google_2.gif"></code>
+  <code><img height="40"  src="https://anaisnursing.files.wordpress.com/2018/12/112-europeo-e1544102374644.jpg"></code>
 
   Dispone de un plus de autollamadas a distintas Fuerzas y Cuerpos de Seguridad.
   <code><img height="40" src="https://i.pinimg.com/originals/86/87/19/868719b1db3829d6a68f81c639f4a5f3.png"></code>
