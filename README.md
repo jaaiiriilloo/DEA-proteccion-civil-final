@@ -6,7 +6,8 @@
   grandes desconocidos actuales, la muerte súbita por parada cardiorespiratoria.
   LA MUERTE SÚBITA MATA MÁS QUE EL ICTUS, EL CÁNCER DE PULMÓN, EL CÁNCER DE MAMA Y EL HIV JUNTOS.
 
-  Este proyecto actualmente en desarrollo para más lugares, solo está disponible para Málaga Capital.<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15212.360976059754!2d-4.434479093438063!3d36.72244227880617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f6698d30d151%3A0x403d278a576e680!2zTcOhbGFnYQ!5e0!3m2!1ses!2ses!4v1594779472079!5m2!1ses!2ses" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+  Este proyecto actualmente en desarrollo para más lugares, solo está disponible para Málaga Capital.<code><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15212.360976059754!2d-4.434479093438063!3d36.72244227880617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f6698d30d151%3A0x403d278a576e680!2zTcOhbGFnYQ!5e0!3m2!1ses!2ses!4v1594779472079!5m2!1ses!2ses" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+  </code>
 
   FUNCIONES:
   Geolocalizar Desfibrilador más cercano a tu ubicación si facilitas los permisos de ubicación.
