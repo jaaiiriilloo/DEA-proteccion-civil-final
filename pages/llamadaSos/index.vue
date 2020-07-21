@@ -73,7 +73,7 @@ body {
   margin: auto;
   max-width: 550px;
   width: 100%;
-  height: 580px;
+  height: 632px;
   font-family: 'Suez One', serif;
   font-size: 10px;
   background-color: white;

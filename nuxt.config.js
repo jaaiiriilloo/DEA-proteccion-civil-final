@@ -94,7 +94,6 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    'nuxt-sweetalert2',
     '@nuxtjs/dotenv',
     '@nuxtjs/proxy'
   ],

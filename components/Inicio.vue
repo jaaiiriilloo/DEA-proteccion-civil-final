@@ -90,6 +90,9 @@ html {
   --btn-h-f: #e8532b;
   --btn-h: #f3c62e;
 }
+.app {
+  height: 80%;
+}
 .container-fluid {
   /*IMPORTANT*/
   display: flex;
@@ -115,7 +118,7 @@ html {
   padding-left: 0px;
   margin-right: auto;
   margin-left: auto;
-  height: 500px;
+  height: 594px;
 }
 .container {
   display: contents;
